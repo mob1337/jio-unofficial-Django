@@ -1,0 +1,33 @@
+<h1>jio saavan unofficial API</h1>
+<form action="" method="POST">
+  <label for="name" >song name:</label><br>
+  <input type="text" id="name" name="songname"><br>
+  <input type="Submit" value="search" name="search">
+    {% csrf_token %}
+
+</form>
+<body>
+<h1>{{data}}</h1>
+<br><br>
+<img src="{{ data.image }}" width="250" height="250">
+<br><br>
+<h1>Song Name</h1>
+{{ data.song }}
+<br>
+<h1>Artist</h1>
+{{ data.primary_artists }}
+<br>
+<h1> Album name</h1>
+{{ data.album }}
+<br><br><br><br><br>
+<audio controls src="{{data.media_preview_url}}">
+
+</audio>
+
+<!--<video src="https://r3---sn-qxa7sn7s.googlevideo.com/videoplayback?expire=1630412878&ei=7sstYff9NaKQz7sP-rC4-AY&ip=103.248.93.155&id=o-AAyLjtwjs6BU4FaVXqNLq6zxOsVz2w2ydqQHPz9qyihu&itag=313&aitags=133%2C134%2C135%2C136%2C137%2C160%2C242%2C243%2C244%2C247%2C248%2C271%2C278%2C313&source=youtube&requiressl=yes&mh=Nc&mm=31%2C29&mn=sn-qxa7sn7s%2Csn-qxaeeney&ms=au%2Crdu&mv=m&mvi=3&pl=24&initcwndbps=840000&vprv=1&mime=video%2Fwebm&ns=-nSTSM2aBn4c_mxw7xYeWg8G&gir=yes&clen=15721998&dur=13.379&lmt=1627314783593291&mt=1630391109&fvip=3&keepalive=yes&fexp=24001373%2C24007246&c=WEB&txp=6316224&n=C5CprLe3sFZqUw&sparams=expire%2Cei%2Cip%2Cid%2Caitags%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRgIhAKmxJ1XcNZp0y93Rvtg3cmBw883Ndrwu1w6EIndTig4EAiEA8fdPMGk4aWQ_OBTgdJfA5U8rlNj0CagXMkgiYE1uD0E%3D&alr=yes&sig=AOq0QJ8wRQIgSLP5lOh_WCjSdavk9xkjvVE37cTnxTHh9BGvjk3iUG8CIQCPgyz8adzyUABpDw2lOOST4d6k2VZo2R5Vut1gtSJEXg%3D%3D&cpn=2uMVinGVo65Et5NB&cver=2.20210830.00.00&range=0-2574115&rn=1&rbuf=0" controls width="300">
+  <track src="https://r3---sn-qxa7sn7s.googlevideo.com/videoplayback?expire=1630412878&ei=7sstYff9NaKQz7sP-rC4-AY&ip=103.248.93.155&id=o-AAyLjtwjs6BU4FaVXqNLq6zxOsVz2w2ydqQHPz9qyihu&itag=251&source=youtube&requiressl=yes&mh=Nc&mm=31%2C29&mn=sn-qxa7sn7s%2Csn-qxaeeney&ms=au%2Crdu&mv=m&mvi=3&pl=24&initcwndbps=840000&vprv=1&mime=audio%2Fwebm&ns=-nSTSM2aBn4c_mxw7xYeWg8G&gir=yes&clen=237880&dur=13.401&lmt=1627314767884470&mt=1630391109&fvip=3&keepalive=yes&fexp=24001373%2C24007246&c=WEB&txp=6311224&n=C5CprLe3sFZqUw&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cvprv%2Cmime%2Cns%2Cgir%2Cclen%2Cdur%2Clmt&lsparams=mh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Cinitcwndbps&lsig=AG3C_xAwRQIgC3y47K1dvXNQJdxu9hw48IPTZSBR77rkuurJau3uPPECIQDv0lCniwsMvhVVk7Z7VX45L3ttfVpnIUjvYnZMjqv-Bg%3D%3D&alr=yes&sig=AOq0QJ8wRgIhAIs0_yycmLsyzJRmUD_4jr4lXAJyY4aTV-gRZOFdOf4aAiEA6dr4sK5OUaO7ivkMhjOEDSvPJucOXG3BoaUOs2aIxsI%3D&cpn=2uMVinGVo65Et5NB&cver=2.20210830.00.00&range=0-65835&rn=2&rbuf=0">
+</video> -->
+<link media = "{{data.media_preview_url}}">
+<br><br>
+<a href="{{data.media_preview_url}}" download="true">Download</a>
+</body>
