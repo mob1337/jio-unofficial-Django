@@ -23,7 +23,6 @@ def homepage(request):
         check="This_is_empty"
         song_id="None"
         go={song_id:"None"}
-
     else:
         check=song_id["topquery"]['data'][0]['more_info']
         song_id_check='song_pids'
@@ -33,7 +32,6 @@ def homepage(request):
 
         else:
             song_id=song_id["topquery"]['data'][0]['id']
-    #############################################################################################################
 
     if check != "This_is_empty":
         song_request = rs.get(f"https://www.jiosaavn.com/api.php?__call=song.getDetails&cc=in&_marker=0%3F_marker%3D0&_format=json&pids={song_id}")
@@ -45,6 +43,5 @@ def homepage(request):
         cleaning_url=cleaning_url.replace("96_p","320")
         print(5 * '-')
         go = json.loads(cleaning_url)
-        print(go)
     return render(request, "homepage.html", {'data': go[song_id]})
 
