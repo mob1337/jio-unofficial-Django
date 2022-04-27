@@ -43,7 +43,5 @@ def homepage(request):
         cleaning_url=cleaning_url.replace("96_p","320")
         print(5 * '-')
         go = json.loads(cleaning_url)
-        print(go)
-
     return render(request, "homepage.html", {'data': go[song_id]})
 
